@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.backgroundStart {
+  background: url("../assets/images/Group3505.png") no-repeat;
+  background-size: 100%;
+}
