@@ -4,5 +4,13 @@
 
 .backgroundStart {
   background: url("../assets/images/Group3505.png") no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
+}
+
+.backgroundColor1 {
+  background-color: #191a32;
+}
+
+.textColor1 {
+  color: #aaaaaa;
 }
