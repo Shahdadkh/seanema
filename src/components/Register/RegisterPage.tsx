@@ -20,6 +20,8 @@ interface typeValue {
 
 const RegisterPage = () => {
   const [showEye, setShowEye] = useState<Boolean>(false);
+  const [swiper, setSwiper] = useState<any>(null);
+  const [swiperPage, setSwiperPage] = useState<any>(0);
 
   const initialValues: typeValue = {
     name: "",
@@ -48,6 +50,8 @@ const RegisterPage = () => {
         <Formik initialValues={initialValues} onSubmit={handleSubmit}>
           <Form>
             <Swiper
+              onSwiper={setSwiper}
+              onSlideChange={(e) => setSwiperPage(e.activeIndex)}
               pagination={true}
               modules={[Pagination]}
               className="mySwiper"
@@ -117,12 +121,22 @@ const RegisterPage = () => {
               <SwiperSlide>Slide 2</SwiperSlide>
             </Swiper>
 
-            <button
-              type="submit"
-              className="text-white bg-[#475AEA] hover:bg-[#3447db] mt-24 focus:ring-0 block focus:outline-none rounded-2xl text-sm font-bold px-5 py-3.5 text-center w-[80vw] sm:w-[20vw] mx-auto"
-            >
-              Next
-            </button>
+            {swiperPage === 0 ? (
+              <button
+                type="button"
+                onClick={() => swiper.slideNext()}
+                className="text-white bg-[#475AEA] hover:bg-[#3447db] mt-24 focus:ring-0 block focus:outline-none rounded-2xl text-sm font-bold px-5 py-3.5 text-center w-[80vw] sm:w-[20vw] mx-auto"
+              >
+                Next
+              </button>
+            ) : (
+              <button
+                type="submit"
+                className="text-white bg-[#475AEA] hover:bg-[#3447db] mt-24 focus:ring-0 block focus:outline-none rounded-2xl text-sm font-bold px-5 py-3.5 text-center w-[80vw] sm:w-[20vw] mx-auto"
+              >
+                Register
+              </button>
+            )}
           </Form>
         </Formik>
       </div>
