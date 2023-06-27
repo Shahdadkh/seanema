@@ -14,3 +14,29 @@
 .textColor1 {
   color: #aaaaaa;
 }
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets .swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: var(--swiper-pagination-bottom, 8px);
+  top: var(--swiper-pagination-top, 220px) !important;
+  left: 0;
+  width: 100%;
+}
+
+.swiper,
+swiper-container {
+  overflow: visible !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--swiper-pagination-color, #475aea) !important;
+}
+
+.swiper-pagination-bullet {
+  background: var(
+    --swiper-pagination-bullet-inactive-color,
+    #475aea
+  ) !important;
+}
