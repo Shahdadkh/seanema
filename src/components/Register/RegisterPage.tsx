@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Formik, Form, Field } from "formik";
-import { Eye, EyeSlash } from "iconsax-react";
+import { Eye, EyeSlash, Camera } from "iconsax-react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
@@ -118,7 +118,23 @@ const RegisterPage = () => {
                   </div>
                 </div>
               </SwiperSlide>
-              <SwiperSlide>Slide 2</SwiperSlide>
+              <SwiperSlide>
+                <div className="mx-8 mt-2">
+                  <div className="text-white font-semibold text-base">
+                    Photo Profile
+                  </div>
+                  <div className="bg-[#24243B] w-full h-40 rounded-xl mt-2 text-center border border-transparent cursor-pointer">
+                    <Camera
+                      size="38"
+                      color="#AAAAAA"
+                      className="mx-auto mt-10"
+                    />
+                    <div className="text-[#AAAAAA]/50 mt-3 text-lg">
+                      Upload Photo
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
             </Swiper>
 
             {swiperPage === 0 ? (
