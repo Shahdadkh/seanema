@@ -122,13 +122,12 @@ const RegisterPage = () => {
             </Swiper>
 
             {swiperPage === 0 ? (
-              <button
-                type="button"
+              <div
                 onClick={() => swiper.slideNext()}
-                className="text-white bg-[#475AEA] hover:bg-[#3447db] mt-24 focus:ring-0 block focus:outline-none rounded-2xl text-sm font-bold px-5 py-3.5 text-center w-[80vw] sm:w-[20vw] mx-auto"
+                className="text-white cursor-pointer bg-[#475AEA] hover:bg-[#3447db] mt-24 focus:ring-0 block focus:outline-none rounded-2xl text-sm font-bold px-5 py-3.5 text-center w-[80vw] sm:w-[20vw] mx-auto"
               >
                 Next
-              </button>
+              </div>
             ) : (
               <button
                 type="submit"
