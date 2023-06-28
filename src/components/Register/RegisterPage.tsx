@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Formik, Form, Field } from "formik";
-import { Eye, EyeSlash, Camera } from "iconsax-react";
+import { Eye, EyeSlash } from "iconsax-react";
+import Previews from "./RegisterImageUploader";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
@@ -11,7 +12,7 @@ import "swiper/css/pagination";
 
 import mask from "@/assets/images/MaskGroup.png";
 import Logo from "@/assets/images/logo.png";
-import Previews from "./RegisterImageUploader";
+//import noImage from "@/assets/images/NoImage.png";
 
 interface typeValue {
   name: string;
@@ -23,6 +24,8 @@ const RegisterPage = () => {
   const [showEye, setShowEye] = useState<Boolean>(false);
   const [swiper, setSwiper] = useState<any>(null);
   const [swiperPage, setSwiperPage] = useState<any>(0);
+  const [getImage, setGetImage] = useState<any>([]);
+  console.log(getImage[0]);
 
   const initialValues: typeValue = {
     name: "",
@@ -124,7 +127,7 @@ const RegisterPage = () => {
                   <div className="text-white font-semibold text-base">
                     Photo Profile
                   </div>
-                  <Previews />
+                  <Previews setGetImage={setGetImage} />
                 </div>
               </SwiperSlide>
             </Swiper>

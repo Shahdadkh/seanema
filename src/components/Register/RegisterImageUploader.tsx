@@ -38,7 +38,7 @@ const img: any = {
   borderRadius: "50%",
 };
 
-export default function Previews(props: any) {
+export default function Previews({ setGetImage }: any) {
   const [files, setFiles] = useState<any>([]);
   const { getRootProps, getInputProps } = useDropzone({
     accept: {
@@ -72,6 +72,7 @@ export default function Previews(props: any) {
   ));
 
   useEffect(() => {
+    setGetImage(files);
     // Make sure to revoke the data uris to avoid memory leaks, will run on unmount
     return () =>
       files.forEach((file: any) => URL.revokeObjectURL(file.preview));
