@@ -11,6 +11,7 @@ import "swiper/css/pagination";
 
 import mask from "@/assets/images/MaskGroup.png";
 import Logo from "@/assets/images/logo.png";
+import Previews from "./RegisterImageUploader";
 
 interface typeValue {
   name: string;
@@ -123,16 +124,7 @@ const RegisterPage = () => {
                   <div className="text-white font-semibold text-base">
                     Photo Profile
                   </div>
-                  <div className="bg-[#24243B] w-full h-40 rounded-xl mt-2 text-center border border-transparent cursor-pointer">
-                    <Camera
-                      size="38"
-                      color="#AAAAAA"
-                      className="mx-auto mt-10"
-                    />
-                    <div className="text-[#AAAAAA]/50 mt-3 text-lg">
-                      Upload Photo
-                    </div>
-                  </div>
+                  <Previews />
                 </div>
               </SwiperSlide>
             </Swiper>
