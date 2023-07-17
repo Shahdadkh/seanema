@@ -1,5 +1,5 @@
 import React from "react";
-import EmblaCarousel from "./js/EmblaCarousel";
+import EmblaCarousel from "./EmblaCarousel";
 import { EmblaOptionsType } from "embla-carousel-react";
 
 const OPTIONS: EmblaOptionsType = { loop: true };

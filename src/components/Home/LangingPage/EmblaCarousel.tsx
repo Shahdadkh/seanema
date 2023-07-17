@@ -7,10 +7,11 @@ import { flushSync } from "react-dom";
 import { DotButton } from "./EmblaCarouselArrowsDotsButtons";
 import Image from "next/image";
 
-import image1 from "@/components/Home/images/slide-1.jpg";
-import image2 from "@/components/Home/images/slide-2.jpg";
-import image3 from "@/components/Home/images/slide-3.jpg";
-import image4 from "@/components/Home/images/slide-4.jpg";
+import emblaStyle from "@/components/Home/LangingPage/css/embla.module.css";
+
+import image1 from "@/assets/images/banner/banner-home.png";
+import image2 from "@/assets/images/banner/banner-2.png";
+import image3 from "@/assets/images/banner/banner-3.png";
 
 const TWEEN_FACTOR = 4.2;
 
@@ -29,7 +30,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
-  const images: any[] = [image1, image2, image3, image4];
+  const images: any[] = [image1, image2, image3];
   const imageByIndex = (index: number): string => images[index % images.length];
 
   const scrollTo = useCallback(
@@ -91,41 +92,40 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   }, [emblaApi, onInit, onSelect]);
 
   return (
-    <>
-      <div className="embla">
-        <div className="embla__viewport" ref={emblaRef}>
-          <div className="embla__container">
+    <div>
+      <div className={emblaStyle.embla}>
+        <div className={emblaStyle["embla__viewport"]} ref={emblaRef}>
+          <div className={emblaStyle["embla__container"]}>
             {slides.map((index) => (
               <div
-                className="embla__slide"
+                className={emblaStyle["embla__slide"]}
                 key={index}
                 style={{
                   ...(tweenValues.length && { opacity: tweenValues[index] }),
                 }}
               >
                 <Image
-                  className="embla__slide__img"
+                  className={emblaStyle["embla__slide__img"]}
                   src={imageByIndex(index)}
-                  alt="Your alt text"
+                  alt={(index + 1).toString()}
                 />
               </div>
             ))}
           </div>
         </div>
       </div>
-
-      <div className="embla__dots">
+      <div className={emblaStyle["embla__dots"]}>
         {scrollSnaps.map((_, index) => (
           <DotButton
             key={index}
             onClick={() => scrollTo(index)}
-            className={"embla__dot".concat(
-              index === selectedIndex ? " embla__dot--selected" : ""
-            )}
+            className={`${emblaStyle["embla__dot"]} ${
+              index === selectedIndex ? emblaStyle["embla__dot--selected"] : ""
+            }`}
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
