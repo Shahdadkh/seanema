@@ -10,6 +10,10 @@ import {
   Video,
   TicketStar,
   Play,
+  Home2,
+  Discover,
+  Save2,
+  User,
 } from "iconsax-react";
 import {
   CircularProgressbarWithChildren,
@@ -48,6 +52,13 @@ const LandingPage: React.FC = () => {
       img: pic2,
       percent: 0,
     },
+  ];
+
+  const subMenu = [
+    { icon: Home2, href: "/" },
+    { icon: Discover, href: "/" },
+    { icon: Save2, href: "/" },
+    { icon: User, href: "/" },
   ];
 
   return (
@@ -98,7 +109,7 @@ const LandingPage: React.FC = () => {
           See all
         </Link>
       </div>
-      <div>
+      <div className="mb-44">
         {filmList.map((item, index) => (
           <div key={index} className="px-14 sm:px-6">
             <div className="flex justify-between px-5 items-center bg-[#24243B] w-full h-40 rounded-3xl my-8">
@@ -133,6 +144,17 @@ const LandingPage: React.FC = () => {
               </Link>
             </div>
           </div>
+        ))}
+      </div>
+      <div className="flex justify-around items-center px-5 w-full sm:w-3/12 h-40 bg-[#191A32] fixed bottom-0">
+        {subMenu.map((item, index) => (
+          <Link key={index} href={item.href}>
+            <item.icon
+              size="26"
+              className="text-[#3662FF] bg-[#3662FF]/10 shadow-[0_0_34px_6px_rgba(54,98,255,0.25)]" //text-[#696969]
+              variant="Outline" //Bold
+            />
+          </Link>
         ))}
       </div>
     </div>
