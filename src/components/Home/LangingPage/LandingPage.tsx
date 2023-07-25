@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import EmblaCarousel from "./EmblaCarousel";
-import { EmblaOptionsType } from "embla-carousel-react";
+import Submenu from "@/components/Common/SubMenu";
+
 import {
   SearchNormal1,
   Notification,
@@ -10,11 +10,11 @@ import {
   Video,
   TicketStar,
   Play,
-  Home2,
-  Discover,
-  Save2,
-  User,
 } from "iconsax-react";
+
+import EmblaCarousel from "./EmblaCarousel";
+import { EmblaOptionsType } from "embla-carousel-react";
+
 import {
   CircularProgressbarWithChildren,
   buildStyles,
@@ -50,15 +50,8 @@ const LandingPage: React.FC = () => {
       name: "Captian America",
       genre: "Action, Fantasy",
       img: pic2,
-      percent: 0,
+      percent: 5,
     },
-  ];
-
-  const subMenu = [
-    { icon: Home2, href: "/" },
-    { icon: Discover, href: "/" },
-    { icon: Save2, href: "/" },
-    { icon: User, href: "/" },
   ];
 
   return (
@@ -146,17 +139,7 @@ const LandingPage: React.FC = () => {
           </div>
         ))}
       </div>
-      <div className="flex justify-around items-center px-5 w-full sm:w-3/12 h-40 bg-[#191A32] fixed bottom-0">
-        {subMenu.map((item, index) => (
-          <Link key={index} href={item.href}>
-            <item.icon
-              size="26"
-              className="text-[#3662FF] bg-[#3662FF]/10 shadow-[0_0_34px_6px_rgba(54,98,255,0.25)]" //text-[#696969]
-              variant="Outline" //Bold
-            />
-          </Link>
-        ))}
-      </div>
+      <Submenu />
     </div>
   );
 };
