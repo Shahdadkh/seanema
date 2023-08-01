@@ -40,11 +40,14 @@ const img: any = {
 
 export default function Previews({ setGetImage }: any) {
   const [files, setFiles] = useState<any>([]);
+  const [base64Decode, setBase64Decode] = useState<any>([]);
+  const [showModal, setShowModal] = useState<any>(false);
   const { getRootProps, getInputProps } = useDropzone({
     accept: {
       "image/*": [],
     },
     onDrop: (acceptedFiles) => {
+      convertToBase64(acceptedFiles[0]);
       setFiles(
         acceptedFiles.map((file) =>
           Object.assign(file, {
@@ -54,6 +57,27 @@ export default function Previews({ setGetImage }: any) {
       );
     },
   });
+
+  const convertToBase64 = (file: any) => {
+    const promise = new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+    promise.then(
+      (result) => {
+        setBase64Decode(result);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  };
 
   const thumbs = files.map((file: any) => (
     <div style={thumb} key={file.name}>
