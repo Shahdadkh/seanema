@@ -49,44 +49,44 @@ const LoginPage = () => {
                 type="email"
                 name="email"
                 id="floating_email"
-                className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b borderColor1 focus:border-white appearance-none dark:text-white focus:outline-none focus:ring-0 peer"
+                className="block py-2.5 px-0 w-full text-xl text-white bg-transparent border-0 border-b borderColor1 focus:border-white appearance-none dark:text-white focus:outline-none focus:ring-0 peer"
                 placeholder=" "
                 required
               />
               <label
                 htmlFor="floating_email"
-                className="absolute text-xs peer-focus:text-lg textColor1 peer-focus:text-white peer-focus:font-semibold  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="absolute text-2xl peer-focus:text-3xl peer-focus:text-white peer-focus:font-semibold textColor1 duration-300 transform -translate-y-6 scale-75 -top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Email
               </label>
             </div>
-            <div className="relative z-0 w-[80vw] sm:w-[20vw] mb-3 group mx-auto">
+            <div className="relative z-0 w-[80vw] sm:w-[20vw] mb-3 mt-14 group mx-auto">
               <Field
                 type={showEye ? "text" : "password"}
                 name="password"
                 id="floating_password"
-                className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b borderColor1 focus:border-white appearance-none dark:text-white focus:outline-none focus:ring-0 peer"
+                className="block py-2.5 px-0 w-full text-xl text-white bg-transparent border-0 border-b borderColor1 focus:border-white appearance-none dark:text-white focus:outline-none focus:ring-0 peer"
                 placeholder=" "
                 required
               />
               <div
                 onClick={() => setShowEye(!showEye)}
-                className="absolute right-1 top-2 cursor-pointer"
+                className="absolute right-1 top-0 cursor-pointer"
               >
                 {showEye ? (
-                  <Eye size="24" className="textColor1" />
+                  <Eye size="22" className="textColor1" />
                 ) : (
-                  <EyeSlash size="24" className="textColor1" />
+                  <EyeSlash size="22" className="textColor1" />
                 )}
               </div>
               <label
                 htmlFor="floating_password"
-                className="absolute text-xs peer-focus:text-lg textColor1 peer-focus:text-white peer-focus:font-semibold  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="absolute text-2xl peer-focus:text-3xl peer-focus:text-white peer-focus:font-semibold textColor1 duration-300 transform -translate-y-6 scale-75 -top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Password
               </label>
             </div>
-            <div className="flex items-center justify-between mb-6 sm:mx-8 mx-10">
+            <div className="flex items-center justify-between mb-6 mt-4 mx-16 sm:mx-10">
               <div className="flex items-center">
                 <Field name="ckeckboxValue" id="blue-checkbox">
                   {({ form: { setFieldValue } }: any) => (
@@ -101,26 +101,26 @@ const LoginPage = () => {
                         )
                       }
                       value=""
-                      className="w-4 h-4 textColor5 bg-transparent rounded dark:ring-offset-gray-800 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
+                      className="w-5 h-5 textColor5 bg-transparent rounded dark:ring-offset-gray-800 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
                     />
                   )}
                 </Field>
 
                 <label
                   htmlFor="blue-checkbox"
-                  className="ml-2 text-sm font-medium textColor1"
+                  className="ml-2 text-xl font-medium textColor1"
                 >
                   Remember me
                 </label>
               </div>
-              <Link href="" className="text-white/90 text-sm">
+              <Link href="" className="text-white/90 text-xl">
                 Forget Password
               </Link>
             </div>
 
             <button
               type="submit"
-              className="text-white backgroundColor2 hover:backgroundColor7 focus:ring-0 block focus:outline-none rounded-2xl text-sm font-bold px-5 py-3.5 text-center w-[80vw] sm:w-[20vw] mx-auto"
+              className="text-white backgroundColor2 hover:backgroundColor7 focus:ring-0 block focus:outline-none rounded-2xl text-xl font-bold px-5 py-6 mt-10 text-center w-[80vw] sm:w-[20vw] mx-auto"
             >
               Log in
             </button>
@@ -128,8 +128,8 @@ const LoginPage = () => {
         </Formik>
       </div>
       <div>
-        <div className="textColor1 text-center mt-6">or log in with</div>
-        <div className="flex justify-around sm:mx-20 mx-28 mt-4">
+        <div className="textColor1 text-center mt-10">or log in with</div>
+        <div className="flex justify-around sm:mx-28 mx-44 mt-4">
           <Link href="">
             <Image src={facebook} alt="" width={45} height={45} />
           </Link>
