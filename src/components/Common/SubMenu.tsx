@@ -14,20 +14,25 @@ const Submenu = () => {
     { icon: User, href: "/" },
   ];
   return (
-    <div className="flex justify-around items-center px-5 w-full sm:w-3/12 h-40 bg-[#191A32] fixed bottom-0">
-      {subMenu.map((item, index) => (
-        <Link key={index} href={item.href}>
-          <item.icon
-            size="26"
-            variant={`${pathname.includes(item.href) ? "Bold" : "Outline"}`}
-            className={`${
-              pathname.includes(item.href)
-                ? "text-[#3662FF] bg-[#3662FF]/10 shadow-[0_0_34px_6px_rgba(54,98,255,0.25)]"
-                : "text-[#696969]"
-            }`}
-          />
-        </Link>
-      ))}
+    <div className="fixed bottom-0 w-full sm:w-3/12 h-40 backgroundColor1">
+      <div className="flex justify-between items-center px-5 mx-auto w-5/6 h-5/6">
+        {subMenu.map((item, index) => (
+          <Link key={index} href={item.href}>
+            <item.icon
+              size="26"
+              variant={`${pathname.includes(item.href) ? "Bold" : "Outline"}`}
+              className={`${
+                pathname.includes(item.href)
+                  ? "textColor4 backgroundColor6 shadow1"
+                  : "textColor3"
+              }`}
+            />
+          </Link>
+        ))}
+      </div>
+      <div className="w-full h-1/6">
+        <div className="mx-auto backgroundColor4 w-3/6 h-2 rounded-full mt-1"></div>
+      </div>
     </div>
   );
 };

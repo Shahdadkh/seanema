@@ -1,5 +1,5 @@
-import NotificationPage from "@/components/Home/NotificationPage/NotificationPage";
+import LandingPage from "@/components/Home/LangingPage/LandingPage";
 
 export default function Home() {
-  return <NotificationPage />;
+  return <LandingPage />;
 }

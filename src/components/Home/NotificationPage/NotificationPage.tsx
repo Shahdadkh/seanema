@@ -13,6 +13,7 @@ const NotificationPage = () => {
   const [selectMenu, setSelectMenu] = useState<any>("All");
 
   const MenuList = ["All", "Information", "Transaction"];
+
   const notificationList = [
     {
       subject: "Today",
@@ -55,7 +56,7 @@ const NotificationPage = () => {
   ];
 
   return (
-    <div className="w-full h-screen sm:w-3/12 mx-auto overflow-x-hidden backgroundColor1">
+    <div className="relative w-full h-screen sm:w-3/12 mx-auto overflow-x-hidden backgroundColor1">
       <div className="flex justify-around items-center my-8">
         <Link href="/">
           <ArrowLeft2 size="22" color="#fff" variant="Outline" />
@@ -122,6 +123,7 @@ const NotificationPage = () => {
           ))}
         </div>
       ))}
+      <div className="absolute right-60 sm:right-48 bottom-4 backgroundColor4 w-2/6 h-2 rounded-full"></div>
     </div>
   );
 };
