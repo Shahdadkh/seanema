@@ -25,7 +25,15 @@
 
 .backgroundColor6 {
   background-color: rgba(54, 98, 255, 0.1);
-} //#3662FF
+} /* #3662FF */
+
+.backgroundColor7 {
+  background-color: #3447db;
+}
+
+.backgroundColor8 {
+  background-color: #39394e;
+}
 
 .textColor1 {
   color: #aaaaaa;
@@ -43,9 +51,25 @@
   color: #3662ff;
 }
 
+.textColor5 {
+  color: #475aea;
+}
+
 .shadow1 {
   box-shadow: 0px 0px 34px 6px rgba(54, 98, 255, 0.25);
-} //shadow-[0_0_34px_6px_rgba(54,98,255,0.25)]
+} /* shadow-[0_0_34px_6px_rgba(54,98,255,0.25)] */
+
+.borderColor1 {
+  border-color: #7a7b95;
+}
+
+.borderColor2 {
+  border-color: #24243b;
+}
+
+.borderColor3 {
+  border-color: #39394e;
+}
 
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets .swiper-pagination-horizontal,

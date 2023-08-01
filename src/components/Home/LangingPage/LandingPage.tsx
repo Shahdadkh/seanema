@@ -78,13 +78,12 @@ const LandingPage: React.FC = () => {
       <div className="flex justify-around w-full h-44 px-10 sm:px-6 mt-8 my-14">
         {categoryList.map((item, index) => (
           <Link key={index} href={item.src}>
-            <div className="border border-[#24243B] w-36 h-full rounded-3xl bg-[#24243B]">
-              <div className="border border-[#39394E] w-20 h-20 bg-[#39394E] rounded-full mx-auto mt-6">
+            <div className="border borderColor2 w-36 h-full rounded-3xl backgroundColor3">
+              <div className="border borderColor3 w-20 h-20 backgroundColor8 rounded-full mx-auto mt-6">
                 <item.icon
                   size="28"
-                  color="#AAAAAA"
                   variant="Bold"
-                  className="mx-auto mt-4"
+                  className="mx-auto mt-4 textColor1"
                 />
               </div>
               <div className="text-white font-semibold text-center mt-1">
@@ -105,7 +104,7 @@ const LandingPage: React.FC = () => {
       <div className="mb-44">
         {filmList.map((item, index) => (
           <div key={index} className="px-14 sm:px-6">
-            <div className="flex justify-between px-5 items-center bg-[#24243B] w-full h-40 rounded-3xl my-8">
+            <div className="flex justify-between px-5 items-center backgroundColor3 w-full h-40 rounded-3xl my-8">
               <div className="flex items-center">
                 <Image
                   src={item.img}
@@ -123,7 +122,7 @@ const LandingPage: React.FC = () => {
                 </div>
               </div>
               <Link href="/">
-                <div className="border border-transparent flex justify-center items-center w-20 h-20 bg-[#39394E] mr-3 sm:mr-0 rounded-full">
+                <div className="border border-transparent flex justify-center items-center w-20 h-20 backgroundColor3 mr-3 sm:mr-0 rounded-full">
                   <CircularProgressbarWithChildren
                     value={item.percent}
                     styles={buildStyles({

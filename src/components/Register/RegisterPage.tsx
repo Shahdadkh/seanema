@@ -99,7 +99,7 @@ const RegisterPage = () => {
                       type={showEye ? "text" : "password"}
                       name="password"
                       id="floating_password"
-                      className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b border-[#7A7B95] focus:border-white appearance-none dark:text-white focus:outline-none focus:ring-0 peer"
+                      className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b borderColor1 focus:border-white appearance-none dark:text-white focus:outline-none focus:ring-0 peer"
                       placeholder=" "
                       required
                     />
@@ -108,9 +108,9 @@ const RegisterPage = () => {
                       className="absolute right-1 top-2 cursor-pointer"
                     >
                       {showEye ? (
-                        <Eye size="24" color="#AAAAAA" />
+                        <Eye size="24" className="textColor1" />
                       ) : (
-                        <EyeSlash size="24" color="#AAAAAA" />
+                        <EyeSlash size="24" className="textColor1" />
                       )}
                     </div>
                     <label
@@ -135,14 +135,14 @@ const RegisterPage = () => {
             {swiperPage === 0 ? (
               <div
                 onClick={() => swiper.slideNext()}
-                className="text-white cursor-pointer bg-[#475AEA] hover:bg-[#3447db] mt-24 focus:ring-0 block focus:outline-none rounded-2xl text-sm font-bold px-5 py-3.5 text-center w-[80vw] sm:w-[20vw] mx-auto"
+                className="text-white cursor-pointer backgroundColor2 hover:backgroundColor7 mt-24 focus:ring-0 block focus:outline-none rounded-2xl text-sm font-bold px-5 py-3.5 text-center w-[80vw] sm:w-[20vw] mx-auto"
               >
                 Next
               </div>
             ) : (
               <button
                 type="submit"
-                className="text-white bg-[#475AEA] hover:bg-[#3447db] mt-24 focus:ring-0 block focus:outline-none rounded-2xl text-sm font-bold px-5 py-3.5 text-center w-[80vw] sm:w-[20vw] mx-auto"
+                className="text-white backgroundColor2 hover:backgroundColor7 mt-24 focus:ring-0 block focus:outline-none rounded-2xl text-sm font-bold px-5 py-3.5 text-center w-[80vw] sm:w-[20vw] mx-auto"
               >
                 Register
               </button>
@@ -158,7 +158,7 @@ const RegisterPage = () => {
         </Link>
       </div>
       <div className="relative mt-[22vh] sm:mt-[12vh] sm:mb-2">
-        <div className="mx-auto bg-[#AAAAAA] sm:w-[10vw] w-[35vw] h-1.5 rounded-full"></div>
+        <div className="mx-auto backgroundColor4 sm:w-[10vw] w-[35vw] h-1.5 rounded-full"></div>
       </div>
     </div>
   );
