@@ -11,8 +11,20 @@
   background-color: #191a32;
 }
 
+.backgroundColor2 {
+  background-color: #475aea;
+}
+
+.backgroundColor3 {
+  background-color: #24243b;
+}
+
 .textColor1 {
   color: #aaaaaa;
+}
+
+.textColor2 {
+  color: #475aea;
 }
 
 .swiper-horizontal > .swiper-pagination-bullets,
