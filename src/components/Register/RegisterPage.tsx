@@ -62,60 +62,60 @@ const RegisterPage = () => {
             >
               <SwiperSlide>
                 <div>
-                  <div className="relative z-0 w-[80vw] sm:w-[20vw] mb-8 group mx-auto">
+                  <div className="relative z-0 w-[80vw] sm:w-[20vw] mb-8 mt-10 group mx-auto">
                     <Field
                       type="text"
                       name="name"
                       id="floating_name"
-                      className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b border-[#7A7B95] focus:border-white appearance-none dark:text-white focus:outline-none focus:ring-0 peer"
+                      className="block py-2.5 px-0 w-full text-xl text-white bg-transparent border-0 border-b borderColor1 focus:border-white appearance-none dark:text-white focus:outline-none focus:ring-0 peer"
                       placeholder=" "
                       required
                     />
                     <label
                       htmlFor="floating_name"
-                      className="absolute text-xs peer-focus:text-lg textColor1 peer-focus:text-white peer-focus:font-semibold  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                      className="absolute text-2xl peer-focus:text-3xl peer-focus:text-white peer-focus:font-semibold textColor1 duration-300 transform -translate-y-6 scale-75 -top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                     >
                       name
                     </label>
                   </div>
-                  <div className="relative z-0 w-[80vw] sm:w-[20vw] mb-8 group mx-auto">
+                  <div className="relative z-0 w-[80vw] sm:w-[20vw] mb-8 mt-14 group mx-auto">
                     <Field
                       type="email"
                       name="email"
                       id="floating_email"
-                      className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b border-[#7A7B95] focus:border-white appearance-none dark:text-white focus:outline-none focus:ring-0 peer"
+                      className="block py-2.5 px-0 w-full text-xl text-white bg-transparent border-0 border-b borderColor1 focus:border-white appearance-none dark:text-white focus:outline-none focus:ring-0 peer"
                       placeholder=" "
                       required
                     />
                     <label
                       htmlFor="floating_email"
-                      className="absolute text-xs peer-focus:text-lg textColor1 peer-focus:text-white peer-focus:font-semibold  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                      className="absolute text-2xl peer-focus:text-3xl peer-focus:text-white peer-focus:font-semibold textColor1 duration-300 transform -translate-y-6 scale-75 -top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                     >
                       Email
                     </label>
                   </div>
-                  <div className="relative z-0 w-[80vw] sm:w-[20vw] mb-3 group mx-auto">
+                  <div className="relative z-0 w-[80vw] sm:w-[20vw] mb-3 mt-14 group mx-auto">
                     <Field
                       type={showEye ? "text" : "password"}
                       name="password"
                       id="floating_password"
-                      className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b borderColor1 focus:border-white appearance-none dark:text-white focus:outline-none focus:ring-0 peer"
+                      className="block py-2.5 px-0 w-full text-xl text-white bg-transparent border-0 border-b borderColor1 focus:border-white appearance-none dark:text-white focus:outline-none focus:ring-0 peer"
                       placeholder=" "
                       required
                     />
                     <div
                       onClick={() => setShowEye(!showEye)}
-                      className="absolute right-1 top-2 cursor-pointer"
+                      className="absolute right-1 top-0 cursor-pointer"
                     >
                       {showEye ? (
-                        <Eye size="24" className="textColor1" />
+                        <Eye size="22" className="textColor1" />
                       ) : (
-                        <EyeSlash size="24" className="textColor1" />
+                        <EyeSlash size="22" className="textColor1" />
                       )}
                     </div>
                     <label
                       htmlFor="floating_password"
-                      className="absolute text-xs peer-focus:text-lg textColor1 peer-focus:text-white peer-focus:font-semibold  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                      className="absolute text-2xl peer-focus:text-3xl peer-focus:text-white peer-focus:font-semibold textColor1 duration-300 transform -translate-y-6 scale-75 -top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                     >
                       Password
                     </label>
@@ -124,7 +124,7 @@ const RegisterPage = () => {
               </SwiperSlide>
               <SwiperSlide>
                 <div className="mx-8 mt-2">
-                  <div className="text-white font-semibold text-base">
+                  <div className="text-white font-semibold text-2xl mb-4">
                     Photo Profile
                   </div>
                   <Previews setGetImage={setGetImage} />
@@ -135,14 +135,14 @@ const RegisterPage = () => {
             {swiperPage === 0 ? (
               <div
                 onClick={() => swiper.slideNext()}
-                className="text-white cursor-pointer backgroundColor2 hover:backgroundColor7 mt-24 focus:ring-0 block focus:outline-none rounded-2xl text-sm font-bold px-5 py-3.5 text-center w-[80vw] sm:w-[20vw] mx-auto"
+                className="text-white backgroundColor2 hover:backgroundColor7 focus:ring-0 block focus:outline-none rounded-2xl text-xl font-bold px-5 py-6 mt-24 text-center w-[80vw] sm:w-[20vw] mx-auto cursor-pointer"
               >
                 Next
               </div>
             ) : (
               <button
                 type="submit"
-                className="text-white backgroundColor2 hover:backgroundColor7 mt-24 focus:ring-0 block focus:outline-none rounded-2xl text-sm font-bold px-5 py-3.5 text-center w-[80vw] sm:w-[20vw] mx-auto"
+                className="text-white backgroundColor2 hover:backgroundColor7 focus:ring-0 block focus:outline-none rounded-2xl text-xl font-bold px-5 py-6 mt-24 text-center w-[80vw] sm:w-[20vw] mx-auto"
               >
                 Register
               </button>
@@ -151,7 +151,7 @@ const RegisterPage = () => {
         </Formik>
       </div>
 
-      <div className="mt-2 text-center">
+      <div className="mt-4 text-center">
         <span className="textColor1">Have an account?</span>
         <Link href="" className="text-white/90 ml-1 font-semibold">
           Login

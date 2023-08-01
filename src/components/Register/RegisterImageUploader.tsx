@@ -83,9 +83,11 @@ export default function Previews({ setGetImage }: any) {
       {files.length === 0 ? (
         <div {...getRootProps({ className: "dropzone" })}>
           <input {...getInputProps()} />
-          <div className="bg-[#24243B] w-full h-40 rounded-xl mt-2 text-center border border-transparent cursor-pointer">
-            <Camera size="38" color="#AAAAAA" className="mx-auto mt-10" />
-            <div className="text-[#AAAAAA]/50 mt-3 text-lg">Upload Photo</div>
+          <div className="backgroundColor3 w-full h-64 rounded-2xl mt-2 text-center border border-transparent cursor-pointer">
+            <Camera size="38" className="mx-auto mt-20 textColor1" />
+            <div className="textColor1 opacity-60 mt-3 text-xl">
+              Upload Photo
+            </div>
           </div>
         </div>
       ) : (

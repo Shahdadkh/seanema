@@ -7,7 +7,7 @@
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
   bottom: var(--swiper-pagination-bottom, 8px);
-  top: var(--swiper-pagination-top, 220px) !important;
+  top: var(--swiper-pagination-top, 210px) !important;
   left: 0;
   width: 100%;
 }
