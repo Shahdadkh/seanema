@@ -25,7 +25,8 @@ const RegisterPage = () => {
   const [swiper, setSwiper] = useState<any>(null);
   const [swiperPage, setSwiperPage] = useState<any>(0);
   const [getImage, setGetImage] = useState<any>([]);
-  console.log(getImage[0]);
+
+  console.log(getImage);
 
   const initialValues: typeValue = {
     name: "",

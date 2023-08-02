@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { Camera } from "iconsax-react";
+import CropImageModal from "../Common/CropImageModal";
 
 const thumbsContainer: any = {
   display: "flex",
@@ -42,6 +43,7 @@ export default function Previews({ setGetImage }: any) {
   const [files, setFiles] = useState<any>([]);
   const [base64Decode, setBase64Decode] = useState<any>([]);
   const [showModal, setShowModal] = useState<any>(false);
+  const [finalImage, setFinalImage] = useState<any>([]);
   const { getRootProps, getInputProps } = useDropzone({
     accept: {
       "image/*": [],
@@ -83,7 +85,7 @@ export default function Previews({ setGetImage }: any) {
     <div style={thumb} key={file.name}>
       <div style={thumbInner}>
         <img
-          src={file.preview}
+          src={finalImage}
           style={img}
           alt=""
           // Revoke data uri after image is loaded
@@ -95,19 +97,26 @@ export default function Previews({ setGetImage }: any) {
     </div>
   ));
 
+  const handleUpload = () => {
+    setShowModal(true);
+  };
+
   useEffect(() => {
-    setGetImage(files);
+    setGetImage(finalImage);
     // Make sure to revoke the data uris to avoid memory leaks, will run on unmount
     return () =>
       files.forEach((file: any) => URL.revokeObjectURL(file.preview));
-  }, [files]);
+  }, [finalImage]);
 
   return (
     <section className="relative container mt-2">
-      {files.length === 0 ? (
+      {base64Decode.length === 0 ? (
         <div {...getRootProps({ className: "dropzone" })}>
           <input {...getInputProps()} />
-          <div className="backgroundColor3 w-full h-64 rounded-2xl mt-2 text-center border border-transparent cursor-pointer">
+          <div
+            onClick={() => handleUpload()}
+            className="backgroundColor3 w-full h-64 rounded-2xl mt-2 text-center border border-transparent cursor-pointer"
+          >
             <Camera size="38" className="mx-auto mt-20 textColor1" />
             <div className="textColor1 opacity-60 mt-3 text-xl">
               Upload Photo
@@ -117,6 +126,12 @@ export default function Previews({ setGetImage }: any) {
       ) : (
         <aside style={thumbsContainer}>{thumbs}</aside>
       )}
+      <CropImageModal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        image={base64Decode}
+        returnImage={setFinalImage}
+      />
     </section>
   );
 }
