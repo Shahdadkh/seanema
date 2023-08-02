@@ -76,7 +76,7 @@ export default function CropImageModal({
         </Modal.Body>
         <Modal.Footer>
           <Button
-            className="text-white backgroundColor2 hover:backgroundColor7"
+            className="text-white backgroundColor2"
             onClick={() => handleClose()}
           >
             Crop

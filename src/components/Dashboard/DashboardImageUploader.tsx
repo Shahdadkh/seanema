@@ -1,28 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
-import { Camera } from "iconsax-react";
+import Image from "next/image";
 import CropImageModal from "../Common/CropImageModal";
+import { Edit2 } from "iconsax-react";
+import pic from "@/assets/images/user.png";
 
 const thumbsContainer: any = {
   display: "flex",
   flexDirection: "row",
   flexWrap: "wrap",
   justifyContent: "center",
-  border: "1px solid transparent",
-  backgroundColor: "#24243B",
-  borderRadius: "15px",
-  height: 160,
 };
 
 const thumb: any = {
   display: "inline-flex",
-  border: "1px solid transparent",
-  marginTop: 18,
+  borderRadius: "50%",
+  border: "1px solid #191a32",
   marginBottom: 8,
   marginRight: 8,
-  width: 120,
-  height: 120,
-  padding: 4,
+  width: 100,
+  height: 100,
+  padding: 0,
   boxSizing: "border-box",
 };
 
@@ -39,7 +37,7 @@ const img: any = {
   borderRadius: "50%",
 };
 
-export default function Previews({ setGetImage }: any) {
+export default function DashboardImageUploader({ setGetImage }: any) {
   const [files, setFiles] = useState<any>([]);
   const [base64Decode, setBase64Decode] = useState<any>([]);
   const [showModal, setShowModal] = useState<any>(false);
@@ -81,13 +79,17 @@ export default function Previews({ setGetImage }: any) {
     );
   };
 
+  console.log(finalImage);
+
   const thumbs = files.map((file: any) => (
     <div style={thumb} key={file.name}>
       <div style={thumbInner}>
-        <img
+        <Image
           src={finalImage}
           style={img}
           alt=""
+          width={100}
+          height={100}
           // Revoke data uri after image is loaded
           onLoad={() => {
             URL.revokeObjectURL(file.preview);
@@ -111,23 +113,24 @@ export default function Previews({ setGetImage }: any) {
   }, [finalImage]);
 
   return (
-    <section className="relative container mt-2">
+    <section className="relative container mt-10">
       {base64Decode.length === 0 ? (
-        <div {...getRootProps({ className: "dropzone" })}>
-          <input {...getInputProps()} />
-          <div
-            onClick={() => handleUpload()}
-            className="backgroundColor3 w-full h-64 rounded-2xl mt-2 text-center border border-transparent cursor-pointer"
-          >
-            <Camera size="38" className="mx-auto mt-20 textColor1" />
-            <div className="textColor1 opacity-60 mt-3 text-xl">
-              Upload Photo
+        <aside style={thumbsContainer}>
+          <div style={thumb}>
+            <div style={thumbInner}>
+              <Image src={pic} style={img} alt="" width={100} height={100} />
             </div>
           </div>
+        </aside>
+      ) : null}
+      {/* End */}
+      <div {...getRootProps({ className: "dropzone" })}>
+        <input {...getInputProps()} />
+        <div className="absolute right-48 bottom-3 flex justify-center items-center w-14 h-14 border-2 borderColor4 backgroundColor2 rounded-full cursor-pointer">
+          <Edit2 onClick={() => handleUpload()} size="18" color="#fff" />
         </div>
-      ) : (
-        <aside style={thumbsContainer}>{thumbs}</aside>
-      )}
+      </div>
+      <aside style={thumbsContainer}>{thumbs}</aside>
       <CropImageModal
         showModal={showModal}
         setShowModal={setShowModal}
