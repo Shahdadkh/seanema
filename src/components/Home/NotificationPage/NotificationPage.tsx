@@ -1,13 +1,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import {
-  ArrowLeft2,
   Video,
   ArrowRight2,
   TickSquare,
   TicketStar,
   User,
 } from "iconsax-react";
+import TitlePage from "@/components/Common/TitlePage";
 
 const NotificationPage = () => {
   const [selectMenu, setSelectMenu] = useState<any>("All");
@@ -57,13 +57,7 @@ const NotificationPage = () => {
 
   return (
     <div className="relative w-full h-screen sm:w-3/12 mx-auto overflow-x-hidden backgroundColor1">
-      <div className="flex justify-around items-center my-8">
-        <Link href="/">
-          <ArrowLeft2 size="22" color="#fff" variant="Outline" />
-        </Link>
-        <div className="text-white text-4xl font-semibold">Notification</div>
-        <div className="w-4 h-4 bg-transparent"></div>
-      </div>
+      <TitlePage title="Notification" />
       <div className="flex items-center m-10">
         {MenuList.map((item, index) => (
           <div key={index}>

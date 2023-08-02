@@ -21,7 +21,7 @@ export default function CropImageModal({
   const [crop, setCrop] = useState({ x: 0, y: 0 });
   const [zoom, setZoom] = useState(1);
   const [croppedAreaPixels, setCroppedAreaPixels] = useState(null);
-  const [croppedImage, setCroppedImage] = useState<any>(null);
+  //const [croppedImage, setCroppedImage] = useState<any>(null);
 
   const onCropComplete = useCallback(
     (croppedArea: any, croppedAreaPixels: any) => {
@@ -33,7 +33,7 @@ export default function CropImageModal({
   const showCroppedImage = useCallback(async () => {
     try {
       const croppedImage = await getCroppedImg(image, croppedAreaPixels);
-      setCroppedImage(croppedImage);
+      //setCroppedImage(croppedImage);
       returnImage(croppedImage);
     } catch (e) {
       console.error(e);
