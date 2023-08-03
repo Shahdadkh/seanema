@@ -69,40 +69,20 @@ const DashboardPage = () => {
       </div>
       <div className="mb-44">
         {itemSettings.map((item, i) => (
-          <div
-            key={i}
-            className="flex items-center justify-between w-5/6 h-20 mx-auto my-8"
-          >
+          <div key={i}>
             {item.toggle ? (
-              <div className="flex items-center w-10/12 h-full">
-                <div className="flex justify-center items-center w-20 h-full backgroundColor8 rounded-3xl">
-                  <item.icon size="28" color="#fff" />
-                </div>
-                <div className="ml-6">
-                  <div className="text-white font-medium text-2xl">
-                    {item.name}
+              <div className="flex items-center justify-between w-5/6 h-20 mx-auto my-8">
+                <div className="flex items-center w-10/12 h-full cursor-default">
+                  <div className="flex justify-center items-center w-20 h-full backgroundColor8 rounded-3xl">
+                    <item.icon size="28" color="#fff" />
                   </div>
-                  <div className="textColor1 text-xl mt-1">{item.detail}</div>
-                </div>
-              </div>
-            ) : (
-              <Link
-                href={item.src}
-                className="flex items-center w-10/12 h-full"
-              >
-                <div className="flex justify-center items-center w-20 h-full backgroundColor8 rounded-3xl">
-                  <item.icon size="28" color="#fff" />
-                </div>
-                <div className="ml-6">
-                  <div className="text-white font-medium text-2xl">
-                    {item.name}
+                  <div className="ml-6">
+                    <div className="text-white font-medium text-2xl">
+                      {item.name}
+                    </div>
+                    <div className="textColor1 text-xl mt-1">{item.detail}</div>
                   </div>
-                  <div className="textColor1 text-xl mt-1">{item.detail}</div>
                 </div>
-              </Link>
-            )}
-            <div>
-              {item.toggle ? (
                 <label className="relative flex items-center cursor-pointer">
                   <input
                     type="checkbox"
@@ -112,10 +92,27 @@ const DashboardPage = () => {
                   />
                   <div className="w-20 h-11 bg-gray-400 peer-focus:outline-none peer-focus:ring-0 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-1.5 after:left-[5px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-8 after:w-8 after:transition-all dark:border-gray-600  peer-checked:bg-[#475aea]"></div>
                 </label>
-              ) : (
+              </div>
+            ) : (
+              <Link
+                href={item.src}
+                key={i}
+                className="flex items-center justify-between w-5/6 h-20 mx-auto my-8"
+              >
+                <div className="flex items-center w-10/12 h-full">
+                  <div className="flex justify-center items-center w-20 h-full backgroundColor8 rounded-3xl">
+                    <item.icon size="28" color="#fff" />
+                  </div>
+                  <div className="ml-6">
+                    <div className="text-white font-medium text-2xl">
+                      {item.name}
+                    </div>
+                    <div className="textColor1 text-xl mt-1">{item.detail}</div>
+                  </div>
+                </div>
                 <ArrowRight2 size="20" className="textColor1" />
-              )}
-            </div>
+              </Link>
+            )}
           </div>
         ))}
       </div>
