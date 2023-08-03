@@ -79,8 +79,6 @@ export default function DashboardImageUploader({ setGetImage }: any) {
     );
   };
 
-  console.log(finalImage);
-
   const thumbs = files.map((file: any) => (
     <div style={thumb} key={file.name}>
       <div style={thumbInner}>

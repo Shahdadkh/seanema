@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Submenu from "@/components/Common/SubMenu";
+import CategoryList from "@/components/Common/CategoryList";
 
 import {
   SearchNormal1,
@@ -32,10 +33,10 @@ const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 const LandingPage: React.FC = () => {
   const [notiBell, setNotiBell] = useState<any>(true);
 
-  const categoryList = [
-    { name: "Genre", icon: Category, src: "/" },
-    { name: "Tv Show", icon: Video, src: "/" },
-    { name: "Go Pro", icon: TicketStar, src: "/" },
+  const categoryLists = [
+    { name: "Genre", icon: Category, tag: "", src: "/" },
+    { name: "Tv Show", icon: Video, tag: "", src: "/" },
+    { name: "Go Pro", icon: TicketStar, tag: "", src: "/" },
   ];
 
   const filmList = [
@@ -75,24 +76,7 @@ const LandingPage: React.FC = () => {
         </div>
       </div>
       <EmblaCarousel slides={SLIDES} options={OPTIONS} />
-      <div className="flex justify-around w-full h-44 px-10 sm:px-6 mt-8 my-14">
-        {categoryList.map((item, index) => (
-          <Link key={index} href={item.src}>
-            <div className="border borderColor2 w-36 h-full rounded-3xl backgroundColor3">
-              <div className="border borderColor3 w-20 h-20 backgroundColor8 rounded-full mx-auto mt-6">
-                <item.icon
-                  size="28"
-                  variant="Bold"
-                  className="mx-auto mt-4 textColor1"
-                />
-              </div>
-              <div className="text-white font-semibold text-center mt-1">
-                {item.name}
-              </div>
-            </div>
-          </Link>
-        ))}
-      </div>
+      <CategoryList src={categoryLists} />
       <div className="flex justify-between px-14 sm:px-7">
         <div className="text-white font-semibold text-3xl">
           Continue Watching
