@@ -124,7 +124,7 @@ export default function DashboardImageUploader({ setGetImage }: any) {
       {/* End */}
       <div {...getRootProps({ className: "dropzone" })}>
         <input {...getInputProps()} />
-        <div className="absolute right-48 bottom-3 flex justify-center items-center w-14 h-14 border-2 borderColor4 backgroundColor2 rounded-full cursor-pointer">
+        <div className="absolute right-64 sm:right-44 bottom-3 flex justify-center items-center w-14 h-14 border-2 borderColor4 backgroundColor2 rounded-full cursor-pointer">
           <Edit2 onClick={() => handleUpload()} size="18" color="#fff" />
         </div>
       </div>
