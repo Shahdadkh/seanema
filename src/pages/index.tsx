@@ -8,5 +8,5 @@ import GenrePage from "@/components/Genre/GenrePage/GenrePage";
 import GenreDetailPage from "@/components/Genre/GenreDetailPage/GenreDetailPage";
 
 export default function Home() {
-  return <GenrePage />;
+  return <GenreDetailPage />;
 }

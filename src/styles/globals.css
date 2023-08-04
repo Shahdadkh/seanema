@@ -33,6 +33,11 @@ swiper-container {
   background-size: 100% 100%;
 }
 
+.background2 {
+  background: url("../assets/images/Subtract.png") no-repeat;
+  background-size: 100% 100%;
+}
+
 .backgroundColor1 {
   background-color: #191a32;
 }

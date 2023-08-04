@@ -30,6 +30,7 @@ const GenrePage = () => {
   return (
     <div className="relative w-full h-screen sm:w-3/12 mx-auto overflow-x-hidden backgroundColor1">
       <TitlePage title="Genre" />
+      {/* Start SearchBox */}
       <div className="w-5/6 h-64 overflow-hidden mx-auto rounded-[30px] mt-8 gradient2">
         <div className="mt-8">
           <div className="text-white text-4xl text-center mx-auto font-semibold">
@@ -58,6 +59,7 @@ const GenrePage = () => {
           </div>
         </form>
       </div>
+      {/* End SearchBox */}
       <div className="mt-14 mx-5">
         <TitlePageWithSeeAll title="Popular genre" src="/" />
       </div>
