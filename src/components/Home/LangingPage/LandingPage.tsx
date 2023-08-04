@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Submenu from "@/components/Common/SubMenu";
 import CategoryList from "@/components/Common/CategoryList";
+import TitlePageWithSeeAll from "@/components/Common/TitlePageWithSeeAll";
 
 import {
   SearchNormal1,
@@ -77,14 +78,7 @@ const LandingPage: React.FC = () => {
       </div>
       <EmblaCarousel slides={SLIDES} options={OPTIONS} />
       <CategoryList src={categoryLists} />
-      <div className="flex justify-between px-14 sm:px-7">
-        <div className="text-white font-semibold text-3xl">
-          Continue Watching
-        </div>
-        <Link href="/" className="text-gray-400">
-          See all
-        </Link>
-      </div>
+      <TitlePageWithSeeAll title="Continue Watching" src="/" />
       <div className="mb-44">
         {filmList.map((item, index) => (
           <div key={index} className="px-14 sm:px-6">
