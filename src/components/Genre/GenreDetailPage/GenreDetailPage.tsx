@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import TitlePage from "@/components/Common/TitlePage";
 import backImage from "@/assets/images/Subtract.png";
+import ShowDataTwoGrid from "@/components/Common/ShowDataTwoGrid";
 
 import action from "@/assets/images/icon/action.png";
 import pic1 from "@/assets/images/wonder-woman.png";
@@ -13,25 +13,25 @@ const GenreDetailPage = () => {
   const genreDetail = [
     {
       name: "Wonder Woman",
-      genre: "Comedy, Family",
+      detail: "Comedy, Family",
       image: pic1,
       href: "",
     },
     {
       name: "Alita",
-      genre: "Cyberpunk, Fantasy",
+      detail: "Cyberpunk, Fantasy",
       image: pic2,
       href: "",
     },
     {
       name: "Mulan",
-      genre: "Action, Drama",
+      detail: "Action, Drama",
       image: pic3,
       href: "",
     },
     {
       name: "I am Legend",
-      genre: "Drama, Fantasy",
+      detail: "Drama, Fantasy",
       image: pic4,
       href: "",
     },
@@ -52,25 +52,7 @@ const GenreDetailPage = () => {
           are thrust into a series of events
         </div>
         <div className="mb-10">
-          <div className="grid grid-cols-2 gap-4 w-5/6 h-fit mt-4 mx-auto">
-            {genreDetail.map((genre, i) => (
-              <Link href={genre.href} key={i} className="h-96">
-                <div className="w-full h-[78%] mx-auto rounded-2xl overflow-hidden">
-                  <Image
-                    src={genre.image}
-                    alt={(i + 1).toString()}
-                    className="w-full h-full"
-                  />
-                </div>
-                <div className="text-white text-center text-2xl mt-2 font-semibold">
-                  {genre.name}
-                </div>
-                <div className="textColor1 text-center text-xl font-medium">
-                  {genre.genre}
-                </div>
-              </Link>
-            ))}
-          </div>
+          <ShowDataTwoGrid src={genreDetail} />
         </div>
       </div>
     </div>
