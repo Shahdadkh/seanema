@@ -10,5 +10,5 @@ import ExploreResultPage from "@/components/Explore/ExploreResult/ExploreResultP
 import ExplorePage from "@/components/Explore/Explore/ExplorePage";
 
 export default function Home() {
-  return <ExplorePage />;
+  return <ExploreResultPage />;
 }
