@@ -38,6 +38,11 @@ swiper-container {
   background-size: 100% 100%;
 }
 
+.backgroundImage {
+  background: url("../assets/images/Avatar.png") no-repeat;
+  background-size: 100% 100%;
+}
+
 .backgroundColor1 {
   background-color: #191a32;
 }
@@ -64,6 +69,10 @@ swiper-container {
 
 .backgroundColor8 {
   background-color: #39394e;
+}
+
+.backgroundColor9 {
+  background-color: #696969;
 }
 
 .textColor1 {

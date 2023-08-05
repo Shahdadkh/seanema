@@ -8,7 +8,8 @@ import GenrePage from "@/components/Genre/GenrePage/GenrePage";
 import GenreDetailPage from "@/components/Genre/GenreDetailPage/GenreDetailPage";
 import ExploreResultPage from "@/components/Explore/ExploreResult/ExploreResultPage";
 import ExplorePage from "@/components/Explore/Explore/ExplorePage";
+import FilmDetail from "@/components/Home/FilmDetail/FilmDetail";
 
 export default function Home() {
-  return <ExploreResultPage />;
+  return <FilmDetail />;
 }
