@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import TitlePage from "@/components/Common/TitlePage";
 import backImage from "@/assets/images/Subtract.png";
 import ShowDataTwoGrid from "@/components/Common/ShowDataTwoGrid";
@@ -10,30 +11,33 @@ import pic3 from "@/assets/images/mulan.png";
 import pic4 from "@/assets/images/iam-legend.png";
 
 const GenreDetailPage = () => {
+  const router = useRouter();
+  const genreName = router.query.name;
+
   const genreDetail = [
     {
       name: "Wonder Woman",
       detail: "Comedy, Family",
       image: pic1,
-      href: "",
+      href: "/Film/16",
     },
     {
       name: "Alita",
       detail: "Cyberpunk, Fantasy",
       image: pic2,
-      href: "",
+      href: "/Film/17",
     },
     {
       name: "Mulan",
       detail: "Action, Drama",
       image: pic3,
-      href: "",
+      href: "/Film/18",
     },
     {
       name: "I am Legend",
       detail: "Drama, Fantasy",
       image: pic4,
-      href: "",
+      href: "/Film/19",
     },
   ];
   return (
@@ -45,7 +49,7 @@ const GenreDetailPage = () => {
       <Image src={backImage} alt="" className="w-full h-fit" />
       <div className="w-full h-full backgroundColor3 border borderColor2">
         <div className="text-white text-center text-3xl mt-5 font-medium">
-          Action
+          {genreName}
         </div>
         <div className="textColor1 text-center text-2xl w-5/6 font-normal my-8 mx-auto">
           Action film is a film genre in which the protagonist or protagonists

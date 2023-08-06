@@ -154,7 +154,7 @@ const RegisterPage = () => {
 
       <div className="mt-4 text-center">
         <span className="textColor1">Have an account?</span>
-        <Link href="" className="text-white/90 ml-1 font-semibold">
+        <Link href="/Login" className="text-white/90 ml-1 font-semibold">
           Login
         </Link>
       </div>

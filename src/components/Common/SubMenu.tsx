@@ -8,10 +8,10 @@ const Submenu = () => {
   const { pathname }: any = router;
 
   const subMenu = [
-    { icon: Home2, href: "/Home" },
-    { icon: Discover, href: "/" },
-    { icon: Save2, href: "/" },
-    { icon: User, href: "/" },
+    { icon: Home2, href: "/" },
+    { icon: Discover, href: "/Explore" },
+    { icon: Save2, href: "/Watchlist" },
+    { icon: User, href: "/Dashboard" },
   ];
   return (
     <div className="fixed bottom-0 w-full sm:w-3/12 h-40 backgroundColor1">

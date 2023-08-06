@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { DocumentDownload, ArrowLeft2, Star1, Archive } from "iconsax-react";
 
 import pic1 from "@/assets/images/Avatar.png";
@@ -10,6 +11,9 @@ import pic5 from "@/assets/images/avatar/samuel.png";
 import pic6 from "@/assets/images/avatar/bel-mendelsohn.png";
 
 const FilmDetail = () => {
+  const router = useRouter();
+  const { id } = router.query;
+
   const castList = [
     { img: pic2 },
     { img: pic3 },
@@ -36,10 +40,10 @@ const FilmDetail = () => {
         }}
       >
         <div className="flex justify-between items-center mx-10 mt-10">
-          <Link href="">
+          <Link href="/">
             <ArrowLeft2 size="26" color="#fff" variant="Outline" />
           </Link>
-          <Link href="">
+          <Link href="/">
             <DocumentDownload size="26" color="#fff" variant="Outline" />
           </Link>
         </div>
@@ -96,7 +100,7 @@ const FilmDetail = () => {
       <div className="flex -space-x-4 mx-10">
         {castList.slice(0, 5).map((cast, i) =>
           i === 4 ? (
-            <Link href="" className="relative w-16 h-16">
+            <Link key={i} href={`${id}/Cast`} className="relative w-16 h-16">
               <Image
                 className="w-16 h-16 rounded-full dark:border-gray-800"
                 src={pic6}
@@ -122,9 +126,12 @@ const FilmDetail = () => {
         <div className="flex justify-center items-center backgroundColor9 w-24 h-full rounded-[20px] cursor-pointer">
           <Archive size="25" color="#fff" variant="Outline" />
         </div>
-        <div className="flex justify-center items-center backgroundColor2 w-3/4 h-full rounded-[20px] text-white text-2xl font-semibold cursor-pointer">
+        <Link
+          href={`${id}/Preview`}
+          className="flex justify-center items-center backgroundColor2 w-3/4 h-full rounded-[20px] text-white text-2xl font-semibold cursor-pointer"
+        >
           Watch Now
-        </div>
+        </Link>
       </div>
     </div>
   );

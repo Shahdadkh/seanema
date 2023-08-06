@@ -20,7 +20,7 @@ const ExploreResultPage = () => {
       genre: "Action, Fantasy",
       star: "4.5",
       image: pic1,
-      href: "/",
+      href: "/Detail/8",
     },
     {
       name: "The Captian",
@@ -29,7 +29,7 @@ const ExploreResultPage = () => {
       genre: "Drama, Thriller",
       star: "4",
       image: pic2,
-      href: "/",
+      href: "/Detail/9",
     },
     {
       name: "Captian America",
@@ -38,7 +38,7 @@ const ExploreResultPage = () => {
       genre: "Action, Fantasy",
       star: "3.5",
       image: pic3,
-      href: "/",
+      href: "/Detail/10",
     },
   ];
 

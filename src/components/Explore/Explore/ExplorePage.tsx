@@ -19,7 +19,7 @@ const ExplorePage = () => {
       year: "1994",
       genre: "Action, Crime, Drama",
       rate: "8.5",
-      href: "",
+      href: "/Detail/11",
       image: pic5,
     },
     {
@@ -27,7 +27,7 @@ const ExplorePage = () => {
       year: "2010",
       genre: "Action, Science fiction",
       rate: "8.8",
-      href: "",
+      href: "/Detail/12",
       image: pic6,
     },
   ];
@@ -37,25 +37,25 @@ const ExplorePage = () => {
       name: "Wonder Woman",
       detail: "Comedy, Family",
       image: pic1,
-      href: "",
+      href: "/Detail/4",
     },
     {
       name: "Alita",
       detail: "Cyberpunk, Fantasy",
       image: pic2,
-      href: "",
+      href: "/Detail/5",
     },
     {
       name: "Mulan",
       detail: "Action, Drama",
       image: pic3,
-      href: "",
+      href: "/Detail/6",
     },
     {
       name: "I am Legend",
       detail: "Drama, Fantasy",
       image: pic4,
-      href: "",
+      href: "/Detail/7",
     },
   ];
 

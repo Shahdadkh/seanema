@@ -16,15 +16,15 @@ import mystery from "@/assets/images/icon/mystery.png";
 
 const GenrePage = () => {
   const genreList = [
-    { name: "Horror", icon: horror, href: "" },
-    { name: "Action", icon: action, href: "" },
-    { name: "Comedy", icon: comedy, href: "" },
-    { name: "Drama", icon: drama, href: "" },
-    { name: "Fantasy", icon: fantasy, href: "" },
-    { name: "Romance", icon: romance, href: "" },
-    { name: "Adventure", icon: adventure, href: "" },
-    { name: "Slice of life", icon: science, href: "" },
-    { name: "Mystery", icon: mystery, href: "" },
+    { name: "Horror", icon: horror, href: "/Genre/Horror" },
+    { name: "Action", icon: action, href: "/Genre/Action" },
+    { name: "Comedy", icon: comedy, href: "/Genre/Comedy" },
+    { name: "Drama", icon: drama, href: "/Genre/Drama" },
+    { name: "Fantasy", icon: fantasy, href: "/Genre/Fantasy" },
+    { name: "Romance", icon: romance, href: "/Genre/Romance" },
+    { name: "Adventure", icon: adventure, href: "/Genre/Adventure" },
+    { name: "Slice of life", icon: science, href: "/Genre/slice-of-life" },
+    { name: "Mystery", icon: mystery, href: "/Genre/Mystery" },
   ];
 
   return (

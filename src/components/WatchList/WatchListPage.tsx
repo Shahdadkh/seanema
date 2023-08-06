@@ -4,7 +4,7 @@ import pic1 from "@/assets/images/captain-marvel-3.png";
 import pic2 from "@/assets/images/the-captain.png";
 import pic3 from "@/assets/images/captain-america-2.png";
 
-const WatchList = () => {
+const WatchListPage = () => {
   const filmList = [
     {
       name: "Captian Marvel",
@@ -13,7 +13,7 @@ const WatchList = () => {
       genre: "Action, Fantasy",
       star: "4.5",
       image: pic1,
-      href: "/",
+      href: "/Film/13",
     },
     {
       name: "The Captian",
@@ -22,7 +22,7 @@ const WatchList = () => {
       genre: "Drama, Thriller",
       star: "4",
       image: pic2,
-      href: "/",
+      href: "/Film/14",
     },
     {
       name: "Captian America",
@@ -31,7 +31,7 @@ const WatchList = () => {
       genre: "Action, Fantasy",
       star: "3.5",
       image: pic3,
-      href: "/",
+      href: "/Film/15",
     },
   ];
 
@@ -48,4 +48,4 @@ const WatchList = () => {
   );
 };
 
-export default WatchList;
+export default WatchListPage;

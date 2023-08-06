@@ -35,22 +35,30 @@ const LandingPage: React.FC = () => {
   const [notiBell, setNotiBell] = useState<any>(true);
 
   const categoryLists = [
-    { name: "Genre", icon: Category, tag: "", src: "/" },
-    { name: "Tv Show", icon: Video, tag: "", src: "/" },
-    { name: "Go Pro", icon: TicketStar, tag: "", src: "/" },
+    { name: "Genre", icon: Category, tag: "", src: "/Genre" },
+    { name: "Tv Show", icon: Video, tag: "", src: "/TvShow" },
+    { name: "Go Pro", icon: TicketStar, tag: "", src: "/Vip" },
   ];
 
   const filmList = [
-    { name: "Pulp Fiction", genre: "Action, Drama", img: pic1, percent: 36 },
+    {
+      name: "Pulp Fiction",
+      genre: "Action, Drama",
+      href: "/Film/1",
+      img: pic1,
+      percent: 36,
+    },
     {
       name: "Captian America",
       genre: "Action, Fantasy",
+      href: "/Film/2",
       img: pic2,
       percent: 78,
     },
     {
       name: "Captian America",
       genre: "Action, Fantasy",
+      href: "/Film/3",
       img: pic2,
       percent: 5,
     },
@@ -61,10 +69,10 @@ const LandingPage: React.FC = () => {
       <div className="flex justify-between items-center mx-10 my-12">
         <Image src={seanema} alt="seanema" />
         <div className="flex items-center">
-          <Link href="/">
+          <Link href="/Genre">
             <SearchNormal1 size="26" color="#fff" className="mr-2" />
           </Link>
-          <Link href="/">
+          <Link href="/Notification">
             {notiBell ? (
               <div className="relative">
                 <Notification size="30" color="#fff" />
@@ -83,7 +91,7 @@ const LandingPage: React.FC = () => {
         {filmList.map((item, index) => (
           <div key={index} className="px-14 sm:px-6">
             <div className="flex justify-between px-5 items-center backgroundColor3 w-full h-40 rounded-3xl my-8">
-              <div className="flex items-center">
+              <Link href={item.href} className="flex items-center">
                 <Image
                   src={item.img}
                   alt=""
@@ -98,7 +106,7 @@ const LandingPage: React.FC = () => {
                     {item.genre}
                   </div>
                 </div>
-              </div>
+              </Link>
               <Link href="/">
                 <div className="border border-transparent flex justify-center items-center w-20 h-20 backgroundColor3 mr-3 sm:mr-0 rounded-full">
                   <CircularProgressbarWithChildren
