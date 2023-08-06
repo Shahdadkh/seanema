@@ -1,9 +1,7 @@
+import VipPage from "@/components/Home/VipPage/VipPage";
+
 const Vip = () => {
-  return (
-    <>
-      <h1>Vip</h1>
-    </>
-  );
+  return <VipPage />;
 };
 
 export default Vip;
