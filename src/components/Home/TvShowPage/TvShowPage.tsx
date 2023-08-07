@@ -1,6 +1,7 @@
 import TitlePage from "@/components/Common/TitlePage";
 import TitlePageWithSeeAll from "@/components/Common/TitlePageWithSeeAll";
 import PopularChannelCarousel from "./PopularChannelCarousel/PopularChannelCarousel";
+import NowPlayingCarousel from "./NowPlayingCarousel/NowPlayingCarousel";
 
 const TvShowPage = () => {
   return (
@@ -17,7 +18,9 @@ const TvShowPage = () => {
       <div className="text-white text-3xl font-medium mx-14 mt-12 mb-4">
         Now Playing
       </div>
-      <div>ss</div>
+      <div className="mb-20">
+        <NowPlayingCarousel />
+      </div>
     </div>
   );
 };
