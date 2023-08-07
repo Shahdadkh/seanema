@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 import useEmblaCarousel, {
   EmblaCarouselType,
   EmblaOptionsType,
@@ -52,13 +53,17 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <div className={embla["embla__viewport"]} ref={emblaRef}>
           <div className={embla["embla__container"]}>
             {images.map((item: any, index: number) => (
-              <div className={embla["embla__slide"]} key={index}>
+              <Link
+                href={`/Film/${index + 1}`}
+                className={embla["embla__slide"]}
+                key={index}
+              >
                 <img
                   className={embla["embla__slide__img"]}
                   src={item.src}
                   alt={(index + 1).toString()}
                 />
-              </div>
+              </Link>
             ))}
           </div>
         </div>

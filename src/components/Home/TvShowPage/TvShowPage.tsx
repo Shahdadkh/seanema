@@ -15,7 +15,7 @@ const TvShowPage = () => {
       <div className="mt-8 ml-14">
         <PopularChannelCarousel />
       </div>
-      <div className="text-white text-3xl font-medium mx-14 mt-12 mb-4">
+      <div className="text-white text-3xl font-medium mx-14 mt-12">
         Now Playing
       </div>
       <div className="mb-20">
