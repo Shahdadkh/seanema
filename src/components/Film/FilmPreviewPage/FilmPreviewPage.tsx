@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactPlayer from "react-player";
 import { useRouter } from "next/router";
 import { ArrowDown2, Star1 } from "iconsax-react";

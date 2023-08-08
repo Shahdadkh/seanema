@@ -1,7 +1,9 @@
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { DocumentDownload, ArrowLeft2, Star1, Archive } from "iconsax-react";
+import DownloadModal from "@/components/Common/DownloadModal";
 
 import pic1 from "@/assets/images/Avatar.png";
 import pic2 from "@/assets/images/avatar/brie-larson.png";
@@ -11,6 +13,7 @@ import pic5 from "@/assets/images/avatar/samuel.png";
 import pic6 from "@/assets/images/avatar/bel-mendelsohn.png";
 
 const FilmDetail = () => {
+  const [showModal, setShowModal] = useState<any>(false);
   const router = useRouter();
   const { id } = router.query;
 
@@ -43,9 +46,14 @@ const FilmDetail = () => {
           <Link href="/">
             <ArrowLeft2 size="26" color="#fff" variant="Outline" />
           </Link>
-          <Link href="/">
-            <DocumentDownload size="26" color="#fff" variant="Outline" />
-          </Link>
+
+          <DocumentDownload
+            onClick={() => setShowModal(true)}
+            size="26"
+            color="#fff"
+            variant="Outline"
+            className="cursor-pointer"
+          />
         </div>
         <div className="absolute bottom-0 sm:bottom-2 right-32 sm:right-24 mx">
           <div className="text-white text-4xl font-bold text-center">
@@ -133,6 +141,7 @@ const FilmDetail = () => {
           Watch Now
         </Link>
       </div>
+      <DownloadModal showModal={showModal} setShowModal={setShowModal} />
     </div>
   );
 };
