@@ -1,9 +1,10 @@
-import TitlePage from "@/components/Common/TitlePage";
 import { useState } from "react";
-
+import TitlePage from "@/components/Common/TitlePage";
+import MessageModal from "@/components/Common/MessageModal";
 import { TickSquare } from "iconsax-react";
 
 const VipPage = () => {
+  const [showModal, setShowModal] = useState<any>(false);
   const [tabControl, setTabControl] = useState<any>("Monthly");
   const tabs = ["Monthly", "Yearly", "Family"];
 
@@ -72,13 +73,14 @@ const VipPage = () => {
           </div>
           <button
             type="button"
-            onClick={() => console.log("ok")}
+            onClick={() => setShowModal(true)}
             className="text-white backgroundColor2 block mx-auto mt-8 mb-16 focus:ring-0 focus:ring-transparent font-semibold rounded-3xl text-2xl px-16 py-4 focus:outline-none"
           >
             Got it
           </button>
         </div>
       ))}
+      <MessageModal showModal={showModal} setShowModal={setShowModal} />
     </div>
   );
 };
