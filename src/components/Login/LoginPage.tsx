@@ -3,6 +3,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import { Eye, EyeSlash } from "iconsax-react";
+import Cookie from "cookie-universal";
+import { useRouter } from "next/router";
 
 import mask from "@/assets/images/MaskGroup.png";
 import Logo from "@/assets/images/logo.png";
@@ -17,6 +19,8 @@ interface typeValue {
 }
 
 const LoginPage = () => {
+  const router = useRouter();
+  const cookies = Cookie();
   const [showEye, setShowEye] = useState<Boolean>(false);
 
   const initialValues: typeValue = {
@@ -27,6 +31,8 @@ const LoginPage = () => {
 
   const handleSubmit = (value: any) => {
     console.log(value);
+    cookies.set("token", "cookieValue");
+    router.push("/Home");
   };
 
   return (

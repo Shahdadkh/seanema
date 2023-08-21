@@ -1,5 +1,12 @@
-import LandingPage from "@/components/Home/LangingPage/LandingPage";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
-export default function Home() {
-  return <LandingPage />;
-}
+const App = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push("/Home");
+  }, []);
+};
+
+export default App;
