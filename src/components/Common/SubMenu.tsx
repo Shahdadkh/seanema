@@ -8,7 +8,7 @@ const Submenu = () => {
   const { pathname }: any = router;
 
   const subMenu = [
-    { icon: Home2, href: "/" },
+    { icon: Home2, href: "/Home" },
     { icon: Discover, href: "/Explore" },
     { icon: Save2, href: "/Watchlist" },
     { icon: User, href: "/Dashboard" },
