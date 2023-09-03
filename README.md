@@ -1,1 +1,1 @@
-Source: https://dribbble.com/shots/21442677-SeaNema-Movie-App?utm_source=Clipboard_Shot&utm_campaign=xamiri&utm_content=SeaNema%20-%20Movie%20App%20%F0%9F%8D%BF&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=xamiri&utm_content=SeaNema%20-%20Movie%20App%20%F0%9F%8D%BF&utm_medium=Social_Share
+Source: https://dribbble.com/shots/21442677-SeaNema-Movie-App
