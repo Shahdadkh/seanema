@@ -55,7 +55,7 @@ const FilmDetail = () => {
             className="cursor-pointer"
           />
         </div>
-        <div className="absolute bottom-0 sm:bottom-2 right-32 sm:right-24 mx">
+        <div className="absolute bottom-0 sm:bottom-2 right-32 sm:right-20 mx">
           <div className="text-white text-4xl font-bold text-center">
             Avatar
           </div>
