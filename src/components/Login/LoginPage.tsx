@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Formik, Form, Field } from "formik";
 import { Eye, EyeSlash } from "iconsax-react";
 import Cookie from "cookie-universal";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 
 import mask from "@/assets/images/MaskGroup.png";
 import Logo from "@/assets/images/logo.png";
