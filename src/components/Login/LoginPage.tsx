@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Formik, Form, Field } from "formik";
 import { Eye, EyeSlash } from "iconsax-react";
 import Cookie from "cookie-universal";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 import mask from "@/assets/images/MaskGroup.png";
 import Logo from "@/assets/images/logo.png";
@@ -22,6 +22,7 @@ const LoginPage = () => {
   const router = useRouter();
   const cookies = Cookie();
   const [showEye, setShowEye] = useState<Boolean>(false);
+  const [shouldRedirect, setShouldRedirect] = useState(false);
 
   const initialValues: typeValue = {
     email: "",
@@ -30,12 +31,21 @@ const LoginPage = () => {
   };
 
   const handleSubmit = (value: any) => {
-    console.log(value);
+    //console.log("Form values:", value);
     cookies.set("token", "cookieValue");
-    setTimeout(() => {
-      router.push("/Home");
-    }, 100);
+    setShouldRedirect(true);
   };
+
+  useEffect(() => {
+    if (shouldRedirect) {
+      const token = cookies.get("token");
+      if (token) {
+        router.push("/Home");
+      } else {
+        console.warn("Token not found in cookie!");
+      }
+    }
+  }, [shouldRedirect]);
 
   return (
     <div className="w-full h-screen sm:w-3/12 mx-auto overflow-x-hidden backgroundColor1">
