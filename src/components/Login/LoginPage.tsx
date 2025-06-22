@@ -32,7 +32,9 @@ const LoginPage = () => {
   const handleSubmit = (value: any) => {
     console.log(value);
     cookies.set("token", "cookieValue");
-    router.push("/Home");
+    setTimeout(() => {
+      router.push("/Home");
+    }, 100);
   };
 
   return (
